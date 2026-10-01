@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apna WiFi - Jhajjar's Trusted Internet Partner</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0047AB;
+            --accent-cyan: #00D1FF;
+            --silver-plan: #8a8a8a;
+            --gold-plan: #d4af37;
+            --platinum-plan: #6a0dad;
+            --dark-bg: #1A1A1A;
+            --light-bg: #FFFFFF;
+            --text-on-light: #333333;
+            --feature-bg: #F0F8FF;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--text-on-light);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--light-bg);
+            padding: 20px 5%;
+            text-align: center;
+            border-bottom: 2px solid #eee;
+        }
+
+        header i.fa-wifi {
+            color: var(--primary-blue);
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        header .high-speed {
+            color: #0284c7;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 5px 0 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        header .trusted-partner {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        header .unlimited-badge {
+            background: linear-gradient(135deg, var(--primary-blue), #0284c7);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-weight: 700;
+            display: inline-block;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header .unlimited-badge h3 { margin: 0; font-size: 0.9rem; }
+        header .unlimited-badge p { margin: 0; font-size: 1.3rem; text-transform: uppercase; }
+
+        header .serving {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        main { padding: 30px 5%; }
+
+        section h2 {
+            text-align: center;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-blue);
+            margin: 8px auto 0;
+        }
+
+        /* --- Plan Cards --- */
+        .plans-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .plan-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e2e8f0;
+        }
+
+        .plan-card:hover { transform: translateY(-5px); }
+
+        .plan-header {
+            color: white;
+            padding: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+
+        .plan-header.silver { background-color: var(--silver-plan); }
+        .plan-header.gold { background-color: var(--gold-plan); }
+        .plan-header.platinum { background-color: var(--platinum-plan); }
+
+        .plan-speed {
+            font-size: 2.8rem;
+            color: var(--primary-blue);
+            font-weight: 700;
+            padding: 20px 0 10px;
+        }
+
+        .plan-speed span { font-size: 1.1rem; display: block; color: #64748b; }
+
+        .plan-price {
+            font-size: 2.2rem;
+            color: #0284c7;
+            font-weight: 700;
+            background-color: #f8fafc;
+            padding: 12px 0;
+        }
+
+        .plan-price span { font-size: 0.9rem; color: #64748b; font-weight: 400; }
+
+        .plan-features {
+            list-style: none;
+            padding: 20px;
+            margin: 0;
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .plan-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 0.95rem;
+        }
+
+        .plan-features li i { color: #0284c7; margin-right: 8px; }
+
+        .select-plan-btn {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 14px;
+            border: none;
+            width: 100%;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .select-plan-btn:hover { background-color: #003380; }
+
+        /* --- Long Term Section --- */
+        .long-term-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .term-container {
+            flex: 1;
+            min-width: 280px;
+            border-radius: 15px;
+            padding: 20px;
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+        }
+
+        .term-title {
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .term-table { width: 100%; border-collapse: collapse; }
+
+        .term-table td {
+            padding: 10px 5px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .term-table tr:last-child td { border-bottom: none; }
+
+        .term-table td.speed-name { font-weight: 600; color: #334155; }
+        .term-table td.price-value { text-align: right; font-weight: 700; color: var(--primary-blue); }
+
+        .term-btn {
+            margin-top: 10px;
+            background: #0284c7;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* --- Contact Bar --- */
+        .contact-bar {
+            background: linear-gradient(135deg, var(--primary-blue), #0284c7);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin-left: 15px;
+        }
+
+        /* --- Modal / Popup Form --- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+
+        .modal-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b;
+        }
+
+        .modal-card h3 {
+            margin-top: 0;
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            color: #475569;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            box-sizing: border-box;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        .footer-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .footer-feature {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .footer-feature i { color: var(--accent-cyan); font-size: 1.5rem; margin-bottom: 8px; }
+        .footer-feature h4 { margin: 0 0 5px 0; font-size: 0.95rem; }
+        .footer-feature p { margin: 0; font-size: 0.8rem; opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <i class="fas fa-wifi"></i>
+        <h1>Apna WiFi</h1>
+        <div class="high-speed">
+            <i class="fas fa-bolt"></i> HIGH SPEED FIBER INTERNET <i class="fas fa-bolt"></i>
+        </div>
+        <div class="trusted-partner">Jhajjar's Trusted Internet Partner</div>
+        <br>
+        <div class="unlimited-badge">
+            <h3>ALL PLANS WITH</h3>
+            <p>UNLIMITED DATA</p>
+        </div>
+        <div class="serving">
+            <i class="fas fa-map-marker-alt"></i> Proudly Serving Jhajjar & Nearby Areas
+        </div>
+    </header>
+
+    <main>
+        <section id="plans">
+            <h2>CHOOSE YOUR PERFECT PLAN</h2>
+            
+            <div class="plans-container">
+                <!-- Silver Plan -->
+                <div class="plan-card">
+                    <div class="plan-header silver">SILVER</div>
+                    <div class="plan-speed">100 <span>Mbps</span></div>
+                    <div class="plan-price">&#8377;499 <span>/Month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle"></i> Unlimited Data</li>
+                        <li><i class="fas fa-check-circle"></i> 100% Fiber Network</li>
+                        <li><i class="fas fa-check-circle"></i> 24x7 Support</li>
+                    </ul>
+                    <button class="select-plan-btn" onclick="openBookingForm('Silver - 100 Mbps (₹499/mo)')">Select Plan</button>
+                </div>
+
+                <!-- Gold Plan -->
+                <div class="plan-card">
+                    <div class="plan-header gold">GOLD</div>
+                    <div class="plan-speed">200 <span>Mbps</span></div>
+                    <div class="plan-price">&#8377;599 <span>/Month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle"></i> Unlimited Data</li>
+                        <li><i class="fas fa-check-circle"></i> 100% Fiber Network</li>
+                        <li><i class="fas fa-check-circle"></i> 24x7 Support</li>
+                    </ul>
+                    <button class="select-plan-btn" onclick="openBookingForm('Gold - 200 Mbps (₹599/mo)')">Select Plan</button>
+                </div>
+
+                <!-- Platinum Plan -->
+                <div class="plan-card">
+                    <div class="plan-header platinum">PLATINUM</div>
+                    <div class="plan-speed">300 <span>Mbps</span></div>
+                    <div class="plan-price">&#8377;699 <span>/Month</span></div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check-circle"></i> Unlimited Data</li>
+                        <li><i class="fas fa-check-circle"></i> 100% Fiber Network</li>
+                        <li><i class="fas fa-check-circle"></i> 24x7 Support</li>
+                    </ul>
+                    <button class="select-plan-btn" onclick="openBookingForm('Platinum - 300 Mbps (₹699/mo)')">Select Plan</button>
+                </div>
+            </div>
+
+            <!-- Long Term Plans -->
+            <div class="long-term-section">
+                <div class="term-container">
+                    <div class="term-title">3 MONTHS PLAN (1 Month Free)</div>
+                    <table class="term-table">
+                        <tr>
+                            <td class="speed-name">100 Mbps</td>
+                            <td class="price-value">&#8377;1,499</td>
+                            <td><button class="term-btn" onclick="openBookingForm('3 Months - 100 Mbps (₹1,499)')">Select</button></td>
+                        </tr>
+                        <tr>
+                            <td class="speed-name">200 Mbps</td>
+                            <td class="price-value">&#8377;1,799</td>
+                            <td><button class="term-btn" onclick="openBookingForm('3 Months - 200 Mbps (₹1,799)')">Select</button></td>
+                        </tr>
+                        <tr>
+                            <td class="speed-name">300 Mbps</td>
+                            <td class="price-value">&#8377;2,099</td>
+                            <td><button class="term-btn" onclick="openBookingForm('3 Months - 300 Mbps (₹2,099)')">Select</button></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="term-container">
+                    <div class="term-title">6 MONTHS PLAN (2 Months Free)</div>
+                    <table class="term-table">
+                        <tr>
+                            <td class="speed-name">100 Mbps</td>
+                            <td class="price-value">&#8377;2,999</td>
+                            <td><button class="term-btn" onclick="openBookingForm('6 Months - 100 Mbps (₹2,999)')">Select</button></td>
+                        </tr>
+                        <tr>
+                            <td class="speed-name">200 Mbps</td>
+                            <td class="price-value">&#8377;3,599</td>
+                            <td><button class="term-btn" onclick="openBookingForm('6 Months - 200 Mbps (₹3,599)')">Select</button></td>
+                        </tr>
+                        <tr>
+                            <td class="speed-name">300 Mbps</td>
+                            <td class="price-value">&#8377;4,199</td>
+                            <td><button class="term-btn" onclick="openBookingForm('6 Months - 300 Mbps (₹4,199)')">Select</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+<div class="contact-bar">
+    <div>
+        <h3 style="margin:0;">Get Connected Today!</h3>
+        <p style="margin:5px 0 0; opacity:0.9;">Fast • Reliable • Affordable</p>
+    </div>
+    <div class="contact-links" style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+        <a href="tel:9728361215" style="color: white; text-decoration: none; font-size: 1.1rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 25px;">
+            <i class="fas fa-phone"></i> 9728361215
+        </a>
+        <a href="https://wa.me/919728361215" target="_blank" style="color: white; text-decoration: none; font-size: 1.1rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; background: #25D366; padding: 8px 15px; border-radius: 25px;">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+    </div>
+</div>
+
+        </section>
+    </main>
+
+    <!-- POPUP CUSTOMER BOOKING FORM -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-card">
+            <span class="close-btn" onclick="closeBookingForm()">&times;</span>
+            <h3>Get New Connection</h3>
+            <p style="font-size:0.85rem; color:#64748b; margin-bottom:15px;">Apni details bharein, hum aapse turant sampark karenge.</p>
+            
+            <!-- 👇 APNA FORMSPREE ENDPOINT HERE 👇 -->
+            <form action="https://formspree.io/f/xyezakwj" method="POST">
+                <div class="form-group">
+                    <label>Selected Plan</label>
+                    <input type="text" id="selectedPlan" name="Selected Plan" readonly style="background:#f1f5f9; font-weight:600;">
+                </div>
+                <div class="form-group">
+                    <label>Full Name*</label>
+                    <input type="text" name="Customer Name" placeholder="Apna Naam Likhein" required>
+                </div>
+                <div class="form-group">
+                    <label>Mobile Number*</label>
+                    <input type="tel" name="Mobile Number" placeholder="10 Digits Mobile Number" pattern="[0-9]{10}" required>
+                </div>
+                <div class="form-group">
+                    <label>Address / Location (Jhajjar)*</label>
+                    <textarea name="Address" rows="2" placeholder="House No., Street/Gali, Area Name" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Book Connection Now</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <h2>Key Network Features</h2>
+        <div class="footer-features">
+            <div class="footer-feature">
+                <i class="fas fa-infinity"></i>
+                <h4>Unlimited Data</h4>
+                <p>FUP Policy Applicable</p>
+            </div>
+            <div class="footer-feature">
+                <i class="fas fa-tachometer-alt"></i>
+                <h4>High Speed</h4>
+                <p>100% Fiber Network</p>
+            </div>
+            <div class="footer-feature">
+                <i class="fas fa-headset"></i>
+                <h4>24x7 Support</h4>
+                <p>Always Here For You</p>
+            </div>
+            <div class="footer-feature">
+                <i class="fas fa-tools"></i>
+                <h4>Free Service Visit</h4>
+                <p>Quick & Hassle Free</p>
+            </div>
+        </div>
+        <p style="margin-top:20px; font-weight:bold; color:var(--accent-cyan);">FAST INTERNET. HAPPY HOME.</p>
+    </footer>
+
+    <script>
+        function openBookingForm(planName) {
+            document.getElementById('selectedPlan').value = planName;
+            document.getElementById('bookingModal').style.display = 'flex';
+        }
+
+        function closeBookingForm() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById('bookingModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
