@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apna WiFi - Jhajjar's Trusted Internet Partner</title>
+    <title>Apna WiFi - Jhajjar's Trusted High-Speed Fiber Internet Partner</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-blue: #0047AB;
+            --primary-dark: #003380;
             --accent-cyan: #00D1FF;
-            --silver-plan: #8a8a8a;
-            --gold-plan: #d4af37;
-            --platinum-plan: #6a0dad;
+            --silver-plan: #718096;
+            --gold-plan: #D69E2E;
+            --platinum-plan: #6B46C1;
             --dark-bg: #1A1A1A;
-            --light-bg: #FFFFFF;
-            --text-on-light: #333333;
-            --feature-bg: #F0F8FF;
+            --light-bg: #F8FAFC;
+            --text-on-light: #2D3748;
         }
 
         body {
@@ -30,11 +30,43 @@
             line-height: 1.6;
         }
 
-        header {
-            background-color: var(--light-bg);
-            padding: 20px 5%;
+        /* Top Sticky Quick Bar */
+        .top-bar {
+            background: #0f172a;
+            color: white;
+            padding: 8px 5%;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .top-bar a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Offer Flash Banner */
+        .offer-banner {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
             text-align: center;
-            border-bottom: 2px solid #eee;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: inset 0 -2px 4px rgba(0,0,0,0.1);
+        }
+
+        header {
+            background-color: #FFFFFF;
+            padding: 30px 5% 20px;
+            text-align: center;
+            border-bottom: 1px solid #E2E8F0;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
         }
 
         header i.fa-wifi {
@@ -48,6 +80,7 @@
             font-size: 2.5rem;
             margin: 0;
             font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         header .high-speed {
@@ -60,14 +93,16 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            font-size: 0.95rem;
         }
 
         header .trusted-partner {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 8px 25px;
-            border-radius: 25px;
-            font-size: 1rem;
+            background-color: #E0F2FE;
+            color: var(--primary-blue);
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
             display: inline-block;
             margin-bottom: 15px;
         }
@@ -75,70 +110,220 @@
         header .unlimited-badge {
             background: linear-gradient(135deg, var(--primary-blue), #0284c7);
             color: white;
-            padding: 12px 30px;
-            border-radius: 10px;
+            padding: 10px 25px;
+            border-radius: 12px;
             font-weight: 700;
             display: inline-block;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,71,171,0.2);
         }
 
-        header .unlimited-badge h3 { margin: 0; font-size: 0.9rem; }
-        header .unlimited-badge p { margin: 0; font-size: 1.3rem; text-transform: uppercase; }
+        header .unlimited-badge h3 { margin: 0; font-size: 0.8rem; letter-spacing: 1px; }
+        header .unlimited-badge p { margin: 0; font-size: 1.2rem; text-transform: uppercase; }
 
         header .serving {
             margin-top: 15px;
-            font-size: 1.1rem;
-            color: var(--primary-blue);
-            font-weight: 600;
+            font-size: 1rem;
+            color: #64748B;
+            font-weight: 500;
         }
 
-        main { padding: 30px 5%; }
+        main { padding: 40px 5%; max-width: 1200px; margin: 0 auto; }
 
         section h2 {
             text-align: center;
             color: var(--primary-blue);
-            font-weight: 600;
-            margin-bottom: 30px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            font-size: 2rem;
             position: relative;
         }
 
         section h2::after {
             content: '';
             display: block;
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-blue);
-            margin: 8px auto 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-cyan);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- Live Performance Meter Bar --- */
+        .metrics-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .metric-card i { color: #10B981; font-size: 1.5rem; margin-bottom: 5px; }
+        .metric-card h4 { margin: 0; font-size: 1.1rem; color: #1E293B; }
+        .metric-card p { margin: 0; font-size: 0.8rem; color: #64748B; }
+
+        /* --- Why Choose Us Grid --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border: 1px solid #E2E8F0;
+        }
+
+        .feature-box i {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+        }
+
+        .feature-box h4 { margin: 0 0 5px; font-size: 1rem; color: #1E293B; }
+        .feature-box p { margin: 0; font-size: 0.85rem; color: #64748B; }
+
+        /* --- Coverage Area Tag --- */
+        .coverage-box {
+            background: #E0F2FE;
+            border: 1px dashed var(--primary-blue);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .coverage-box h3 { color: var(--primary-blue); margin-top: 0; font-size: 1.2rem; }
+        .coverage-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .coverage-tag {
+            background: white;
+            color: #0369A1;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* --- Interactive Plan Recommender Wizard --- */
+        .wizard-section {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .wizard-section h3 {
+            margin-top: 0;
+            color: var(--accent-cyan);
+            text-align: center;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .wizard-options {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .wizard-btn {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .wizard-btn:hover, .wizard-btn.active {
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        .wizard-result {
+            background: rgba(255,255,255,0.05);
+            border: 1px dashed rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1rem;
         }
 
         /* --- Plan Cards --- */
         .plans-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
         }
 
         .plan-card {
             background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            border: 1px solid #e2e8f0;
+            border: 1px solid #E2E8F0;
+            position: relative;
         }
 
-        .plan-card:hover { transform: translateY(-5px); }
+        .plan-card.popular {
+            border: 2px solid var(--gold-plan);
+            transform: scale(1.03);
+        }
+
+        .plan-card.popular:hover { transform: scale(1.05) translateY(-5px); }
+        .plan-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--gold-plan);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
 
         .plan-header {
             color: white;
-            padding: 15px;
+            padding: 18px;
             font-weight: 700;
             text-transform: uppercase;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
         }
 
         .plan-header.silver { background-color: var(--silver-plan); }
@@ -146,44 +331,47 @@
         .plan-header.platinum { background-color: var(--platinum-plan); }
 
         .plan-speed {
-            font-size: 2.8rem;
+            font-size: 3rem;
             color: var(--primary-blue);
-            font-weight: 700;
-            padding: 20px 0 10px;
+            font-weight: 800;
+            padding: 20px 0 5px;
         }
 
-        .plan-speed span { font-size: 1.1rem; display: block; color: #64748b; }
+        .plan-speed span { font-size: 1rem; display: block; color: #64748B; font-weight: 600; text-transform: uppercase; }
 
         .plan-price {
             font-size: 2.2rem;
-            color: #0284c7;
+            color: #0F172A;
             font-weight: 700;
-            background-color: #f8fafc;
-            padding: 12px 0;
+            background-color: #F8FAFC;
+            padding: 15px 0;
+            border-top: 1px solid #F1F5F9;
+            border-bottom: 1px solid #F1F5F9;
         }
 
-        .plan-price span { font-size: 0.9rem; color: #64748b; font-weight: 400; }
+        .plan-price span { font-size: 0.9rem; color: #64748B; font-weight: 400; }
 
         .plan-features {
             list-style: none;
-            padding: 20px;
+            padding: 20px 25px;
             margin: 0;
             flex-grow: 1;
             text-align: left;
         }
 
         .plan-features li {
-            padding: 8px 0;
-            border-bottom: 1px solid #f1f5f9;
+            padding: 10px 0;
+            border-bottom: 1px solid #F1F5F9;
             font-size: 0.95rem;
+            color: #475569;
         }
 
-        .plan-features li i { color: #0284c7; margin-right: 8px; }
+        .plan-features li i { color: #10B981; margin-right: 10px; }
 
         .select-plan-btn {
             background-color: var(--primary-blue);
             color: white;
-            padding: 14px;
+            padding: 15px;
             border: none;
             width: 100%;
             font-weight: 600;
@@ -192,76 +380,228 @@
             transition: background-color 0.3s;
         }
 
-        .select-plan-btn:hover { background-color: #003380; }
+        .select-plan-btn:hover { background-color: var(--primary-dark); }
 
         /* --- Long Term Section --- */
         .long-term-section {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .term-container {
-            flex: 1;
-            min-width: 280px;
-            border-radius: 15px;
-            padding: 20px;
-            background: #f8fafc;
-            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 25px;
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
         .term-title {
             color: var(--primary-blue);
             font-weight: 700;
-            font-size: 1.3rem;
-            margin-bottom: 15px;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            background: #E0F2FE;
+            padding: 10px;
+            border-radius: 8px;
         }
 
         .term-table { width: 100%; border-collapse: collapse; }
 
         .term-table td {
-            padding: 10px 5px;
-            border-bottom: 1px solid #e2e8f0;
+            padding: 12px 8px;
+            border-bottom: 1px solid #F1F5F9;
         }
 
         .term-table tr:last-child td { border-bottom: none; }
 
         .term-table td.speed-name { font-weight: 600; color: #334155; }
-        .term-table td.price-value { text-align: right; font-weight: 700; color: var(--primary-blue); }
+        .term-table td.price-value { text-align: right; font-weight: 700; color: var(--primary-blue); font-size: 1.1rem; }
 
         .term-btn {
-            margin-top: 10px;
-            background: #0284c7;
+            background: #0EA5E9;
             color: white;
             border: none;
-            padding: 8px 15px;
+            padding: 6px 14px;
             border-radius: 6px;
             cursor: pointer;
             font-size: 0.85rem;
             font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .term-btn:hover { background: #0284C7; }
+
+        /* --- Refer & Earn Banner --- */
+        .refer-earn-card {
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+        }
+
+        .refer-earn-card h3 { margin-top: 0; font-size: 1.6rem; }
+        .refer-earn-card p { font-size: 1rem; margin-bottom: 20px; opacity: 0.95; }
+        .refer-btn {
+            background: white;
+            color: #065f46;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .refer-btn:hover { transform: scale(1.05); }
+
+        /* --- FAQ Section --- */
+        .faq-section {
+            margin-bottom: 50px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-answer {
+            color: #475569;
+            font-size: 0.95rem;
+            margin: 0;
+            padding-left: 25px;
+        }
+
+        /* --- Testimonials Section --- */
+        .testimonials-section {
+            margin-bottom: 50px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .testimonial-card .stars {
+            color: #F59E0B;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #475569;
+            font-size: 0.95rem;
+            margin: 0 0 15px 0;
+        }
+
+        .testimonial-card h5 {
+            margin: 0;
+            color: var(--primary-blue);
+            font-size: 1rem;
+        }
+
+        .testimonial-card span {
+            font-size: 0.8rem;
+            color: #94A3B8;
         }
 
         /* --- Contact Bar --- */
         .contact-bar {
             background: linear-gradient(135deg, var(--primary-blue), #0284c7);
             color: white;
-            padding: 25px;
-            border-radius: 15px;
+            padding: 30px;
+            border-radius: 16px;
             margin-bottom: 40px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            gap: 15px;
+            gap: 20px;
+            box-shadow: 0 10px 25px rgba(0,71,171,0.2);
         }
 
-        .contact-links a {
+        .contact-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
             color: white;
             text-decoration: none;
-            font-size: 1.5rem;
-            margin-left: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: transform 0.2s;
         }
+
+        .contact-btn:hover { transform: scale(1.05); }
+        .contact-btn.phone { background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4); }
+        .contact-btn.whatsapp { background: #25D366; }
+
+        /* --- Floating WhatsApp Button --- */
+        .float-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+
+        .float-whatsapp:hover { transform: scale(1.1); }
 
         /* --- Modal / Popup Form --- */
         .modal-overlay {
@@ -276,16 +616,23 @@
             justify-content: center;
             align-items: center;
             padding: 15px;
+            backdrop-filter: blur(4px);
         }
 
         .modal-card {
             background: white;
             padding: 30px;
-            border-radius: 16px;
+            border-radius: 20px;
             width: 100%;
             max-width: 420px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             position: relative;
+            animation: modalPop 0.3s ease;
+        }
+
+        @keyframes modalPop {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         .close-btn {
@@ -294,13 +641,13 @@
             right: 20px;
             font-size: 1.5rem;
             cursor: pointer;
-            color: #64748b;
+            color: #64748B;
         }
 
         .modal-card h3 {
             margin-top: 0;
             color: var(--primary-blue);
-            font-size: 1.4rem;
+            font-size: 1.5rem;
         }
 
         .form-group {
@@ -316,13 +663,19 @@
             font-weight: 600;
         }
 
-        .form-group input, .form-group textarea, .form-group select {
+        .form-group input, .form-group textarea {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid #CBD5E1;
+            border-radius: 10px;
             font-size: 0.95rem;
             box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary-blue);
         }
 
         .submit-btn {
@@ -330,39 +683,68 @@
             background: var(--primary-blue);
             color: white;
             border: none;
-            padding: 12px;
-            border-radius: 8px;
+            padding: 14px;
+            border-radius: 10px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
+            transition: background 0.2s;
         }
+
+        .submit-btn:hover { background: var(--primary-dark); }
 
         footer {
             background-color: var(--dark-bg);
             color: white;
-            padding: 40px 5%;
+            padding: 50px 5% 30px;
             text-align: center;
         }
 
         .footer-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .footer-feature {
-            background: rgba(255,255,255,0.05);
-            padding: 15px;
-            border-radius: 8px;
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .footer-feature i { color: var(--accent-cyan); font-size: 1.5rem; margin-bottom: 8px; }
-        .footer-feature h4 { margin: 0 0 5px 0; font-size: 0.95rem; }
-        .footer-feature p { margin: 0; font-size: 0.8rem; opacity: 0.8; }
+        .footer-feature i { color: var(--accent-cyan); font-size: 1.8rem; margin-bottom: 10px; }
+        .footer-feature h4 { margin: 0 0 5px 0; font-size: 1rem; color: #fff; }
+        .footer-feature p { margin: 0; font-size: 0.8rem; opacity: 0.7; }
+
+        @media(max-width: 768px) {
+            .plan-card.popular { transform: none; }
+            .plan-card.popular:hover { transform: translateY(-5px); }
+            header h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Floating WhatsApp Icon -->
+    <a href="https://wa.me/919728361215?text=Hi%2C%20I%20want%20to%20get%20Apna%20WiFi%20connection%20at%20my%20home/office." target="_blank" class="float-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+        <span><i class="fas fa-map-marker-alt" style="color:#38bdf8;"></i> Special Fiber Expansion Across Jhajjar</span>
+        <span>Helpline: <a href="tel:9728361215">9728-36-1215</a></span>
+    </div>
+
+    <!-- Limited Time Offer Banner -->
+    <div class="offer-banner">
+        🔥 Special Offer: Free High-Speed Router Setup & Zero Installation Charges on All Plans!
+    </div>
 
     <header>
         <i class="fas fa-wifi"></i>
@@ -377,11 +759,81 @@
             <p>UNLIMITED DATA</p>
         </div>
         <div class="serving">
-            <i class="fas fa-map-marker-alt"></i> Proudly Serving Jhajjar & Nearby Areas
+            <i class="fas fa-check-circle" style="color: #10B981;"></i> Zero Lag • 99.9% Uptime • Direct Fiber Connection
         </div>
     </header>
 
     <main>
+        <!-- Live Performance Metric Bar -->
+        <div class="metrics-bar">
+            <div class="metric-card">
+                <i class="fas fa-signal"></i>
+                <h4>99.9% Uptime</h4>
+                <p>Guaranteed Network Stability</p>
+            </div>
+            <div class="metric-card">
+                <i class="fas fa-bolt"></i>
+                <h4>< 5ms Ping</h4>
+                <p>Super Low Latency for Gaming</p>
+            </div>
+            <div class="metric-card">
+                <i class="fas fa-headset"></i>
+                <h4>Instant Support</h4>
+                <p>Local Team in Jhajjar</p>
+            </div>
+        </div>
+
+        <!-- Features Quick Highlights -->
+        <div class="features-grid">
+            <div class="feature-box">
+                <i class="fas fa-network-wired"></i>
+                <h4>100% Fiber Optic</h4>
+                <p>Pure copper-free fiber network for ultimate speed</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-gamepad"></i>
+                <h4>Low Ping Gaming</h4>
+                <p>Uninterrupted gaming and smooth 4K streaming</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-headset"></i>
+                <h4>Local Expert Support</h4>
+                <p>Quick resolution & prompt customer service</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-rupee-sign"></i>
+                <h4>Best Price Guarantee</h4>
+                <p>High speed broadband packed at affordable rates</p>
+            </div>
+        </div>
+
+        <!-- Coverage Area Showcase -->
+        <div class="coverage-box">
+            <h3><i class="fas fa-map-marked-alt"></i> Available Locations in Jhajjar</h3>
+            <p style="margin: 5px 0 10px; font-size: 0.9rem; color: #475569;">Humare fiber network se jude apne ilake ke log:</p>
+            <div class="coverage-tags">
+                <span class="coverage-tag">Main City Jhajjar</span>
+                <span class="coverage-tag">Civil Lines Area</span>
+                <span class="coverage-tag">Sec-9 & Nearby Localities</span>
+                <span class="coverage-tag">Bahadurgarh Road Area</span>
+                <span class="coverage-tag">And Surrounding Colonies</span>
+            </div>
+        </div>
+
+        <!-- Plan Recommender Wizard -->
+        <div class="wizard-section">
+            <h3><i class="fas fa-magic"></i> Find Your Perfect Plan</h3>
+            <p style="text-align: center; font-size: 0.9rem; margin-top: -10px; margin-bottom: 15px; opacity: 0.8;">Apna main usage select karein:</p>
+            <div class="wizard-options">
+                <button class="wizard-btn active" onclick="recommendPlan('family', this)">Small Family & Browsing</button>
+                <button class="wizard-btn" onclick="recommendPlan('wfh', this)">Work From Home & 4K Streaming</button>
+                <button class="wizard-btn" onclick="recommendPlan('gaming', this)">Heavy Gaming & Multi-Devices</button>
+            </div>
+            <div class="wizard-result" id="wizardResult">
+                👉 Apke liye best suggestion: <b>SILVER (100 Mbps - ₹499/mo)</b> - Chote parivaar aur normal daily usage ke liye ekdum mast!
+            </div>
+        </div>
+
         <section id="plans">
             <h2>CHOOSE YOUR PERFECT PLAN</h2>
             
@@ -392,24 +844,27 @@
                     <div class="plan-speed">100 <span>Mbps</span></div>
                     <div class="plan-price">&#8377;499 <span>/Month</span></div>
                     <ul class="plan-features">
-                        <li><i class="fas fa-check-circle"></i> Unlimited Data</li>
-                        <li><i class="fas fa-check-circle"></i> 100% Fiber Network</li>
-                        <li><i class="fas fa-check-circle"></i> 24x7 Support</li>
+                        <li><i class="fas fa-check-circle"></i> Unlimited High-Speed Data</li>
+                        <li><i class="fas fa-check-circle"></i> 100% Pure Fiber Line</li>
+                        <li><i class="fas fa-check-circle"></i> Best for Small Families</li>
+                        <li><i class="fas fa-check-circle"></i> 24x7 Customer Support</li>
                     </ul>
-                    <button class="select-plan-btn" onclick="openBookingForm('Silver - 100 Mbps (₹499/mo)')">Select Plan</button>
+                    <button class="select-plan-btn" onclick="openBookingForm('Silver - 100 Mbps (₹499/mo)')">Get Started</button>
                 </div>
 
-                <!-- Gold Plan -->
-                <div class="plan-card">
+                <!-- Gold Plan (Highlighted as Best Seller) -->
+                <div class="plan-card popular">
+                    <div class="popular-badge">POPULAR</div>
                     <div class="plan-header gold">GOLD</div>
                     <div class="plan-speed">200 <span>Mbps</span></div>
                     <div class="plan-price">&#8377;599 <span>/Month</span></div>
                     <ul class="plan-features">
-                        <li><i class="fas fa-check-circle"></i> Unlimited Data</li>
-                        <li><i class="fas fa-check-circle"></i> 100% Fiber Network</li>
-                        <li><i class="fas fa-check-circle"></i> 24x7 Support</li>
+                        <li><i class="fas fa-check-circle"></i> Unlimited High-Speed Data</li>
+                        <li><i class="fas fa-check-circle"></i> 100% Pure Fiber Line</li>
+                        <li><i class="fas fa-check-circle"></i> Perfect for 4K Streaming & WFH</li>
+                        <li><i class="fas fa-check-circle"></i> Priority 24x7 Support</li>
                     </ul>
-                    <button class="select-plan-btn" onclick="openBookingForm('Gold - 200 Mbps (₹599/mo)')">Select Plan</button>
+                    <button class="select-plan-btn" onclick="openBookingForm('Gold - 200 Mbps (₹599/mo)')">Get Started</button>
                 </div>
 
                 <!-- Platinum Plan -->
@@ -418,15 +873,17 @@
                     <div class="plan-speed">300 <span>Mbps</span></div>
                     <div class="plan-price">&#8377;699 <span>/Month</span></div>
                     <ul class="plan-features">
-                        <li><i class="fas fa-check-circle"></i> Unlimited Data</li>
-                        <li><i class="fas fa-check-circle"></i> 100% Fiber Network</li>
-                        <li><i class="fas fa-check-circle"></i> 24x7 Support</li>
+                        <li><i class="fas fa-check-circle"></i> Unlimited High-Speed Data</li>
+                        <li><i class="fas fa-check-circle"></i> 100% Pure Fiber Line</li>
+                        <li><i class="fas fa-check-circle"></i> Heavy Gaming & Multiple Devices</li>
+                        <li><i class="fas fa-check-circle"></i> VIP Priority Support</li>
                     </ul>
-                    <button class="select-plan-btn" onclick="openBookingForm('Platinum - 300 Mbps (₹699/mo)')">Select Plan</button>
+                    <button class="select-plan-btn" onclick="openBookingForm('Platinum - 300 Mbps (₹699/mo)')">Get Started</button>
                 </div>
             </div>
 
             <!-- Long Term Plans -->
+            <h2 style="font-size: 1.6rem; margin-top: 50px;">LONG TERM SAVINGS BUNDLES</h2>
             <div class="long-term-section">
                 <div class="term-container">
                     <div class="term-title">3 MONTHS PLAN (1 Month Free)</div>
@@ -471,21 +928,66 @@
                 </div>
             </div>
 
+            <!-- Refer & Earn Section -->
+            <div class="refer-earn-card">
+                <h3>🤝 Refer a Friend & Earn Rewards!</h3>
+                <p>Apne kisi dost, relative ya padosi ko Apna WiFi connection lagwayein aur apne next bill par payein **₹100 ka instant cashback**!</p>
+                <a href="https://wa.me/919728361215?text=Hi%2C%20I%20want%20to%20refer%20a%20friend%20for%20Apna%20WiFi%20connection." target="_blank" class="refer-btn">Refer Now via WhatsApp</a>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>FREQUENTLY ASKED QUESTIONS</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question"><i class="fas fa-question-circle"></i> Connection lagne me kitna samay lagta hai?</div>
+                        <p class="faq-answer">Booking confirm hone ke baad humaari team aapse sampark karti hai aur aamtaur par same-day ya 24 ghante ke andar connection install ho jata hai.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><i class="fas fa-question-circle"></i> Kya installation ya router ke koi extra charges hain?</div>
+                        <p class="faq-answer">Filhaal promotional offer ke tahat installation aur basic setup bilkul free provide kiya ja raha hai.</p>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question"><i class="fas fa-question-circle"></i> Kya data sach me unlimited hai?</div>
+                        <p class="faq-answer">Haan, aapke sabhi plans me high-speed unlimited data milta hai jisse aap bina kisi fikar ke streaming aur gaming kar sakte hain.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Testimonials Section -->
+            <div class="testimonials-section">
+                <h2>WHAT OUR CUSTOMERS SAY</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p>"Bhai Jhajjar me pehli baar aisi high speed internet service mili hai. Gaming me ping hamesha low rehti hai aur backup service bhi badiya hai."</p>
+                        <h5>Aman Sharma</h5>
+                        <span><span>Jhajjar</span></span>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p>"Connection install karwana bilkul easy tha, aur price bhi local market me sabse best ₹499 me unlimited data mil rha hai. Highly recommended!"</p>
+                        <h5>Vikash Ahlawat</h5>
+                        <span><span>Jhajjar</span></span>
+                    </div>
+                </div>
+            </div>
+
             <!-- Contact Section -->
-<div class="contact-bar">
-    <div>
-        <h3 style="margin:0;">Get Connected Today!</h3>
-        <p style="margin:5px 0 0; opacity:0.9;">Fast • Reliable • Affordable</p>
-    </div>
-    <div class="contact-links" style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
-        <a href="tel:9728361215" style="color: white; text-decoration: none; font-size: 1.1rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 25px;">
-            <i class="fas fa-phone"></i> 9728361215
-        </a>
-        <a href="https://wa.me/919728361215" target="_blank" style="color: white; text-decoration: none; font-size: 1.1rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; background: #25D366; padding: 8px 15px; border-radius: 25px;">
-            <i class="fab fa-whatsapp"></i> WhatsApp
-        </a>
-    </div>
-</div>
+            <div class="contact-bar">
+                <div>
+                    <h3 style="margin:0; font-size: 1.4rem;">Get Connected Today in Jhajjar!</h3>
+                    <p style="margin:5px 0 0; opacity:0.9; font-size: 0.95rem;">Fast Installation • Reliable Speed • Friendly Service</p>
+                </div>
+                <div class="contact-links">
+                    <a href="tel:9728361215" class="contact-btn phone">
+                        <i class="fas fa-phone-alt"></i> 9728361215
+                    </a>
+                    <a href="https://wa.me/919728361215?text=Hi%2C%20I%20want%20to%20get%20Apna%20WiFi%20connection%20at%20my%20home/office." target="_blank" class="contact-btn whatsapp">
+                        <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> WhatsApp Us
+                    </a>
+                </div>
+            </div>
 
         </section>
     </main>
@@ -494,14 +996,13 @@
     <div class="modal-overlay" id="bookingModal">
         <div class="modal-card">
             <span class="close-btn" onclick="closeBookingForm()">&times;</span>
-            <h3>Get New Connection</h3>
-            <p style="font-size:0.85rem; color:#64748b; margin-bottom:15px;">Apni details bharein, hum aapse turant sampark karenge.</p>
+            <h3>Book New Connection</h3>
+            <p style="font-size:0.85rem; color:#64748b; margin-bottom:20px;">Apni details bharein, humara representative aapse turant sampark karega.</p>
             
-            <!-- 👇 APNA FORMSPREE ENDPOINT HERE 👇 -->
             <form action="https://formspree.io/f/xyezakwj" method="POST">
                 <div class="form-group">
                     <label>Selected Plan</label>
-                    <input type="text" id="selectedPlan" name="Selected Plan" readonly style="background:#f1f5f9; font-weight:600;">
+                    <input type="text" id="selectedPlan" name="Selected Plan" readonly style="background:#F8FAFC; font-weight:600; color:#0284C7;">
                 </div>
                 <div class="form-group">
                     <label>Full Name*</label>
@@ -515,7 +1016,7 @@
                     <label>Address / Location (Jhajjar)*</label>
                     <textarea name="Address" rows="2" placeholder="House No., Street/Gali, Area Name" required></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Book Connection Now</button>
+                <button type="submit" class="submit-btn">Confirm Booking</button>
             </form>
         </div>
     </div>
@@ -526,25 +1027,25 @@
             <div class="footer-feature">
                 <i class="fas fa-infinity"></i>
                 <h4>Unlimited Data</h4>
-                <p>FUP Policy Applicable</p>
+                <p>High speed seamless usage</p>
             </div>
             <div class="footer-feature">
                 <i class="fas fa-tachometer-alt"></i>
-                <h4>High Speed</h4>
-                <p>100% Fiber Network</p>
+                <h4>True High Speed</h4>
+                <p>100% Fiber Backbone</p>
             </div>
             <div class="footer-feature">
                 <i class="fas fa-headset"></i>
                 <h4>24x7 Support</h4>
-                <p>Always Here For You</p>
+                <p>Always here for assistance</p>
             </div>
             <div class="footer-feature">
                 <i class="fas fa-tools"></i>
-                <h4>Free Service Visit</h4>
-                <p>Quick & Hassle Free</p>
+                <h4>Free Fast Install</h4>
+                <p>Quick & hassle-free setup</p>
             </div>
         </div>
-        <p style="margin-top:20px; font-weight:bold; color:var(--accent-cyan);">FAST INTERNET. HAPPY HOME.</p>
+        <p style="margin-top:20px; font-weight:600; color:var(--accent-cyan); letter-spacing: 1px;">FAST INTERNET. HAPPY HOME.</p>
     </footer>
 
     <script>
@@ -563,8 +1064,21 @@
                 modal.style.display = "none";
             }
         }
+
+        // Plan Recommender Wizard Logic
+        function recommendPlan(type, btn) {
+            document.querySelectorAll('.wizard-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            let resultDiv = document.getElementById('wizardResult');
+            if(type === 'family') {
+                resultDiv.innerHTML = `👉 Apke liye best suggestion: <b>SILVER (100 Mbps - ₹499/mo)</b> - Chote parivaar aur normal daily browsing ke liye ekdum mast!`;
+            } else if(type === 'wfh') {
+                resultDiv.innerHTML = `👉 Apke liye best suggestion: <b>GOLD (200 Mbps - ₹599/mo)</b> - WFH, Zoom calls aur 4K video streaming ke liye sabse shandar!`;
+            } else if(type === 'gaming') {
+                resultDiv.innerHTML = `👉 Apke liye best suggestion: <b>PLATINUM (300 Mbps - ₹699/mo)</b> - Heavy online gaming aur multiple smart devices ke liye VIP speed!`;
+            }
+        }
     </script>
 </body>
 </html>
-
-
